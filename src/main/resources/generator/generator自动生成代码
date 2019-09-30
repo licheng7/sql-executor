@@ -1,0 +1,14 @@
+1   配置generatorConfig.xml文件
+2   pom文件中加入generator插件
+        <plugin>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-maven-plugin</artifactId>
+            <version>1.3.2</version>
+            <configuration>
+                <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                <overwrite>true</overwrite>
+                <verbose>true</verbose>
+            </configuration>
+        </plugin>
+3   idea下右侧点击Maven Projects,选择对应的module,从Plugins里面找到mybatis-generator插件,下拉看到mybatis-generator:generate,点击运行即可;
+    或者,运行命令:java -jar mybatis-generator-core-1.3.5.jar -configfile generatorConfig.xml -overwrite
